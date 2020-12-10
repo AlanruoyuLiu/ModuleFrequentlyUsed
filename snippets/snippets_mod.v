@@ -24,4 +24,13 @@ module moduleName (
 
    end
 
+   //Sequencial always
+   always @(posedge clk or negedge rst_n) begin
+       if (!rst_n) begin
+           ${1} <= ${2};
+       end else begin
+           
+       end
+   end
+
 endmodule

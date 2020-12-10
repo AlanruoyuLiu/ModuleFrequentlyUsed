@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="verilog">
+  <snippet>
+    <text><![CDATA[
+    always@ (*) begin
+      ${0}
+    end
+]]></text>
+    <tag>alw</tag>
+    <description>always</description>
+  </snippet>
+
+
+  <snippet>
+    <text><![CDATA[
+   always @(posedge clk or negedge rst_n) begin
+       if (!rst_n) begin
+           ${1} <= ${2};
+       end else begin
+           
+       end
+   end
+]]></text>
+    <tag>alwc</tag>
+    <description>alwaysclk</description>
+  </snippet>
+
+
+  <snippet>
+    <text><![CDATA[
+       case (${0})
+          ${1} : ${2}
+           default: 
+       endcase
+]]></text>
+    <tag>ca</tag>
+    <description>case</description>
+  </snippet>
+
+
+</snippets>
+
