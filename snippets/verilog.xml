@@ -28,6 +28,81 @@
 
   <snippet>
     <text><![CDATA[
+    wire [${0}:0] ${1};
+]]></text>
+    <tag>wa</tag>
+    <description>wirearray</description>
+  </snippet>
+
+  <snippet>
+    <text><![CDATA[
+    reg [${0}:0] ${1};
+]]></text>
+    <tag>ra</tag>
+    <description>registerarray</description>
+  </snippet>
+
+  <snippet>
+    <text><![CDATA[
+    output [${0}:0] ${1};
+]]></text>
+    <tag>oa</tag>
+    <description>outputarray</description>
+  </snippet>
+
+  <snippet>
+    <text><![CDATA[
+    input [${0}:0] ${1};
+]]></text>
+    <tag>ia</tag>
+    <description>inputarray</description>
+  </snippet>
+
+
+  <snippet>
+    <text><![CDATA[
+    (${0} == ${1}) ? ${2} : ${3};
+]]></text>
+    <tag>cho</tag>
+    <description>chooseOne</description>
+  </snippet>
+
+
+  <snippet>
+    <text><![CDATA[
+   if (${0}) begin
+       
+   end else begin
+       
+   end
+]]></text>
+    <tag>if</tag>
+    <description>if_else</description>
+  </snippet>
+
+
+  <snippet>
+    <text><![CDATA[
+   if (${0}) begin
+       
+   end else if ( ) begin
+       
+   end
+]]></text>
+    <tag>ife</tag>
+    <description>if_elseif</description>
+  </snippet>
+
+  <snippet>
+    <text><![CDATA[
+    assgin ${0} = ${1};
+]]></text>
+    <tag>as</tag>
+    <description>assign</description>
+  </snippet>
+
+  <snippet>
+    <text><![CDATA[
        case (${0})
           ${1} : ${2}
            default: 
@@ -36,6 +111,53 @@
     <tag>ca</tag>
     <description>case</description>
   </snippet>
+
+  <snippet>
+    <text><![CDATA[
+    module ${0} (
+        ${1}, ${2}
+    );
+        input [3:0] $1;
+        output $2;
+
+        reg $2;
+        
+    endmodule
+]]></text>
+    <tag>mod</tag>
+    <description>module</description>
+  </snippet>
+
+
+  <snippet>
+    <text><![CDATA[
+`timescale 10ms/10ms
+module tb_${0} ();
+
+reg clk, rst_n;
+wire port_out;
+
+initial begin
+    clk = 1'b0;
+    rst_n = 1'b1;
+    #20 
+    rst_n = 1'b0;
+    #20 
+    rst_n = 1'b1;
+
+end
+
+always #5 clk = ~clk;
+//    Din = {$random} % 255; //generate random number range : [0,255]
+
+$0 DUT (.clk(clk), .rst_n(rst_n),.port_out(port_out));
+    
+endmodule
+]]></text>
+    <tag>tb</tag>
+    <description>testbench</description>
+  </snippet>
+
 
 
 </snippets>
